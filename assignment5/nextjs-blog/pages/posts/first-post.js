@@ -6,6 +6,8 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 // Imported Script from the next library
 import Script from "next/script";
+// Post Module CSS Module import
+import postStyles from "../../styles/Post.module.css";
 
 export default function FirstPost() {
   return (
@@ -13,8 +15,6 @@ export default function FirstPost() {
       {/* Added head element for SEO */}
       <Head>
         <title>First Post</title>
-        {/* Added Facebooks SDK for JavaScript */}
-        <script src="https://connect.facebook.net/en_US/sdk.js" />
       </Head>
       <Script
         src="https://connect.facebook.net/en_US/sdk.js"
@@ -23,10 +23,10 @@ export default function FirstPost() {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
-      <h1>First Post</h1>
-      <h2>
-        <Link href="/">← Back to home</Link>
-      </h2>
+      <h1 className={postStyles.title}>First Post</h1>
+      <p className={postStyles.description}>
+        Welcome to my super minimal blog!
+      </p>
     </Layout>
   );
 }

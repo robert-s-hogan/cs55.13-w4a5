@@ -1,4 +1,4 @@
-// Added code to parse MD files
+// Utiltiy function to read MD files from the Next.js Tutorial
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
