@@ -6,3 +6,179 @@
   font-size: 1.2rem;
   color: gray;
 }
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.postItem {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.postItem:last-child {
+  border-bottom: 0;
+}
+
+.postLink {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.postLink:hover,
+.postLink:focus {
+  text-decoration: underline;
+}
+
+.postDate {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Optional: “card” look (use if you prefer cards over dividers) */
+.postCard {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.postCard:hover {
+  background: #fafafa;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.post {
+  position: relative;
+  color: #e7e7f2;
+  background: radial-gradient(
+      900px 400px at 50% -10%,
+      rgba(79, 70, 229, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(180deg, rgba(34, 211, 238, 0.06), rgba(2, 6, 23, 0.06)),
+    #0b0d17;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* subtle scanline/grid overlay */
+.post::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 14px 14px, 14px 14px;
+  border-radius: inherit;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+/* Neon title */
+.title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, #60a5fa, #7c3aed 45%, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* gradient text */
+  text-shadow: 0 2px 18px rgba(124, 58, 237, 0.25);
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Date chip */
+.description {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: #a9a9c5;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+/* Markdown content wrapper */
+.content {
+  max-width: 65ch;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+/* Headings inside content */
+.content h2,
+.content h3 {
+  color: #c7cffd;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.18);
+  margin-top: 1.6rem;
+}
+
+/* Gamer list bullets (🎮) */
+.content ul,
+.content ol {
+  margin: 0.75rem 0 0.75rem 1.25rem;
+  padding: 0;
+}
+.content ul li::marker {
+  content: "🎮 ";
+  font-size: 1rem;
+}
+.content ol {
+  list-style: decimal-leading-zero;
+}
+
+/* Cards for lists if you want them chunkier */
+.content li {
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
+}
+
+/* Links with slight “glow” on hover */
+.content a {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+.content a:hover {
+  text-shadow: 0 0 8px rgba(147, 197, 253, 0.7);
+}
+
+/* Blockquotes */
+.content blockquote {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  border-radius: 10px;
+}
+
+/* Code & pre */
+.content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
+.content pre {
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #0a0f1f;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
